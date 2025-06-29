@@ -1,0 +1,16 @@
+﻿.content-form-cliente {
+    margin-top: 20px;
+}
+.content-form-cliente h2 {
+    font-weight: lighter;
+}
+.beneficiário-buttom {
+    margin-top: 20px;
+}
+.send-buttons{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: end;
+}

@@ -1,0 +1,158 @@
+﻿
+<form id="formCadastro" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Nome">Nome:</label>
+                <input required="required" type="text" class="form-control" id="Nome" name="Nome" placeholder="Ex.: João" maxlength="50">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Sobrenome">Sobrenome:</label>
+                <input required="required" type="text" class="form-control" id="Sobrenome" name="Sobrenome" placeholder="Ex.: da Silva" maxlength="255">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="CPF">CPF:</label>
+                <input required="required" type="text" class="form-control" id="CPF" name="CPF" placeholder="999.999.999-99" maxlength="255">
+
+                <small id="cpf-incompleto" class="text-danger" style="display: none;">
+                    CPF precisa conter 11 dígitos.
+                </small>
+
+                <small id="cpf-invalido" class="text-danger" style="display: none;">
+                    CPF inválido. Verifique os dígitos.
+                </small>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Nacionalidade">Nacionalidade:</label>
+                <input required="required" type="text" class="form-control" id="Nacionalidade" name="Nacionalidade" placeholder="Ex.: brasileira" maxlength="50">
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="CEP">CEP:</label>
+                <input required="required" type="text" class="form-control" id="CEP" name="CEP" placeholder="Ex.: 01011-100" maxlength="9">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="Estado">Estado:</label>
+                <select required="required" id="Estado" class="form-control" name="Estado">
+                    <option value="">Selecione</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="PE">Pernambuco</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="Cidade">Cidade:</label>
+                <input required="required" type="text" class="form-control" id="Cidade" name="Cidade" maxlength="50" placeholder="Ex.: São Paulo">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="Logradouro">Logradouro:</label>
+                <input required="required" type="text" class="form-control" id="Logradouro" name="Logradouro" placeholder="Ex.: Rua Boa Vista 253" maxlength="500">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Email">E-mail:</label>
+                <input required="required" type="text" class="form-control" id="Email" name="Email" placeholder="Ex.: email@email.com" maxlength="2079">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="Telefone">Telefone:</label>
+                <input required="required" type="tel" class="form-control" id="Telefone" name="Telefone" placeholder="Ex.: (11) 2020-3030" maxlength="15">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="pull-right">
+                <div class="beneficiário-buttom">
+                    <button type="button" class="btn btn-sm btn-primary pull-right" id="btnBeneficiarios"
+                            data-url-beneficiarios="@Url.Action("ListarPorCliente", "Beneficiario", new { area = "" })">
+                        Beneficiários
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="pull-right">
+                <div class="send-buttons">
+                    <button type="submit" class="btn btn-sm btn-success">Salvar</button>
+                    @Html.ActionLink("Voltar", "Index", "Cliente", new { }, new { @class = "btn btn-sm btn-danger" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="BeneficiariosJson" name="BeneficiariosJson" />
+
+</form>
+
+
+<div class="modal fade" id="modalBeneficiarios" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h5 class="modal-title mb-0">Beneficiários</h5>
+                <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formBeneficiario" class="mb-3">
+                    <div class="form-beneficiarios-custom">
+                        <div class="form-group mb-0">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" id="cpfBeneficiario" maxlength="14" placeholder="CPF" required />
+                                <small id="cpf-benef-incompleto" class="text-danger" style="display: none;">
+                                    CPF precisa conter 11 dígitos.
+                                </small>
+                                <small id="cpf-benef-invalido" class="text-danger" style="display: none;">
+                                    CPF inválido. Verifique os dígitos.
+                                </small>
+                            </div>
+
+                        </div>
+                        <div class="form-group mb-0 mx-2">
+                            <input type="text" class="form-control" id="nomeBeneficiario" placeholder="Nome" required />
+                        </div>
+                        <div class="form-group mb-0">
+                            <button type="submit" class="btn btn-success btn-align" id="btnAddBeneficiario">
+                                Adicionar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="gridBeneficiarios"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

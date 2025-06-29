@@ -1,0 +1,135 @@
+﻿.header-title {
+    font-weight: lighter;
+}
+
+.custom-options {
+    margin-left: 20px;
+}
+
+    .custom-options ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .custom-options li {
+        margin: 0;
+    }
+
+    .custom-options a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+        .custom-options a:hover {
+            color: #ddd;
+        }
+
+.navbar-custom {
+    background-color: #232323;
+}
+
+.navbar-nav > li > a {
+    color: #fff;
+    font-weight: lighter;
+}
+
+    .navbar-nav > li > a:hover {
+        color: #ddd;
+    }
+
+.content-clientes {
+    margin-top: 20px;
+}
+
+    .content-clientes h2 {
+        font-weight: lighter;
+    }
+
+.btn-novo-cliente {
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.jtable-main-container > div.jtable-title {
+    background-color: #232323 !important;
+    padding-left: 10px;
+}
+
+    div.jtable-main-container > div.jtable-title .jtable-title-text {
+        font-family: 'Segoe UI Semilight', 'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+        font-weight: 300;
+        font-size: 19px;
+        line-height: 35px;
+        color: #fff;
+        background-color: #232323 !important;
+    }
+
+    div.jtable-main-container > div.jtable-title .jtable-toolbar {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #232323;
+    }
+
+div.jtable-main-container table.jtable thead th.jtable-column-header-sortable {
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+div.jtable-main-container > table.jtable > thead th {
+    background-color: #454545;
+    color: #fff;
+    min-height: 50px;
+}
+
+.table tbody > tr > td,
+.table tbody > tr > th {
+    color: #000;
+    padding: 0.5rem;
+    border-bottom: 1px solid #444;
+}
+
+
+div.jtable-main-container table.jtable tbody tr.jtable-no-data-row {
+    text-align: center;
+    height: 50px;
+    color: #000;
+}
+
+
+.table-footer,
+.jtable-bottom-panel,
+div.jtable-main-container .jtable-pagination {
+    background-color: #232323;
+    color: #fff;
+    padding: 0.5rem;
+    text-align: right;
+    font-size: 14px;
+}
+
+
+.table > :not(caption) > * > * {
+    box-shadow: none;
+}
+
+div.jtable-main-container > div.jtable-bottom-panel div.jtable-right-area {
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-color: #232323;
+    color: #fff;
+}
+
+.table > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    color: #fff;
+    background-color: #232323;
+    border-bottom-width: var(--bs-border-width);
+    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
+}
